@@ -1,0 +1,2 @@
+[0228/173609.983:ERROR:process_reader_win.cc(123)] NtOpenThread: {アクセス拒否} プロセスはオブジェクトのアクセスを要求しましたが、アクセス権が与えられていません。 (0xc0000022)
+[0228/173609.995:ERROR:exception_snapshot_win.cc(88)] thread ID 9728 not found in process

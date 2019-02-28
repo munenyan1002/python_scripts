@@ -13,17 +13,14 @@ print(driver.title)
 search_box = driver.find_element_by_name("q")
 search_box.send_keys('ChromeDriver')
 search_box.submit()
-print(driver.title)
 
-driver.save_screenshot('search_results.png')
+for i, g in enumerate(driver.find_elements_by_class_name("g")):
+    print("------ " + str(i+1) + " ------")
+    r = g.find_element_by_class_name("r")
+    print(r.find_element_by_tag_name("h3").text)  # タイトル
+    print("\t" + r.find_element_by_tag_name("a").get_attribute("href"))  # URL
+    s = g.find_element_by_class_name("s")
+    print("\t" + s.find_element_by_class_name("st").text)  # サマリー
 
-for g_h3 in driver.find_elements_by_css_selector(".g h3"):
-    print(g_h3.text)
-    
-    # print(g_h3.text.encode('cp932', 'ignore').decode('cp932'))  # Windowsのコマンドプロンプトを使う場合
-
-#elements のように複数形にするとリストを取得できます
-stats = driver.find_elements_by_id("resultStats")[0].text
-print(stats)
 
 driver.quit()
